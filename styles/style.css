@@ -13,6 +13,12 @@ body {
 	display: flex;
     flex-direction: column;
 	min-height: 100vh;
+	margin: 0;
+	padding: 0;
+}
+
+.wrapper {
+	flex: 1;
 }
 
 .title, .subtitle {
@@ -98,14 +104,16 @@ button {
     transition: background-color 0.3s ease;
 }
 
+button:hover, button:focus {
+	background-color: #133c71;
+	transition: 0.5s;
+}
+
 footer {
 	width: 100%;
-	opacity: 75%;
     color: #fff;
     text-align: center;
     padding: 20px;
-	position: sticky;
-	bottom: 0;
 }
 
 /* The circles on the timeline */
