@@ -11,7 +11,7 @@ html {
 body {
 	font-family: Helvetica, sans-serif;
 	display: flex;
-    flex-direction: column;
+	flex-direction: column;
 	min-height: 100vh;
 	margin: 0;
 	padding: 0;
@@ -94,14 +94,14 @@ button {
 	flex: 1;
 	padding: 10px 20px;
 	padding: 10px 20px;
-    background-color: #3872d6;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    margin: 0 5px;
-    transition: background-color 0.3s ease;
+	background-color: #3872d6;
+	color: #fff;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	font-size: 16px;
+	margin: 0 5px;
+	transition: background-color 0.3s ease;
 }
 
 button:hover, button:focus {
@@ -111,9 +111,9 @@ button:hover, button:focus {
 
 footer {
 	width: 100%;
-    color: #fff;
-    text-align: center;
-    padding: 20px;
+	color: #fff;
+	text-align: center;
+	padding: 20px;
 }
 
 /* The circles on the timeline */
