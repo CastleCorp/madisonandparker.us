@@ -24,6 +24,9 @@
         <h1 id="top" class="title">Madison & Parker</h1>
         <img src="/img/us.svg">
         <h2 class="subtitle">Our Story</h2>
+        <p class="subtitle">Click the "Next" and "Previous buttons at the bottom right to look through</p>
+        <p class="subtitle">Click an image to expand it</p>
+        <p></p>
         
         <nav>
             <button id="prevBtn">Previous</button>
@@ -48,6 +51,9 @@
             </div>
             <div class="container left" id="3">
                 <div class="content">
+                    <div class="picture-frame">
+                        <img src="/img/tacos.jpg" alt="Our beautiful taco creation for a Branding Brand Friday contest">
+                    </div>
                     <h2>We're official <i class="fa-solid fa-circle-check" style="color: #218c33;"></i></h2>
                     <h3>April 06, 2023</h3>
                     <p>After a taco contest dinner with friends, Parker asked Madison if she would be his girlfriend. Luckily she said yes!</p>
@@ -55,6 +61,9 @@
             </div>
             <div class="container right" id="4">
                 <div class="content">
+                    <div class="picture-frame">
+                        <img src="/img/rome.jpg" alt="Standing outside of the Colosseum">
+                    </div>
                     <h2>Our first trip <i class="fa-solid fa-earth-europe"></i></h2>
                     <h3>November 10, 2022</h3>
                     <p>Our first adventure abroad together. We took a whirlwind trip to Paris, Rome and Florence - and ate ourselves silly!</p>
@@ -62,6 +71,9 @@
             </div>
             <div class="container left" id="5">
                 <div class="content">
+                    <div class="picture-frame">
+                        <img src="/img/christmas.jpg" alt="Madison with her new camera, bundled up and ready to face the arctic blast">
+                    </div>
                     <h2>Our first Christmas together <i class="fa-solid fa-tree" style="color: #2a552d;"></i></h2>
                     <h3>December 25, 2022</h3>
                     <p>After <a href="https://earthobservatory.nasa.gov/images/150797/weather-whiplash#:~:text=December%202022%20and%20January%202023,a%20travel%20nightmare%20around%20Christmas." target="_blank">freak weather</a> grounded flights, Madison joined Parker and family for Christmas in Lexington!</p>
@@ -69,6 +81,9 @@
             </div>
             <div class="container right" id="6">
                 <div class="content">
+                    <div class="picture-frame">
+                        <img src="/img/snowshoe.jpg" alt="A sunny day skiing at Snowshoe to celebrate 1 year!">
+                    </div>
                     <h2>One year! <i class="fa-solid fa-calendar-days" style="color: #3872d6;"></i></h2>
                     <h3>March 05, 2023</h3>
                     <p>We celebrated at Snowshoe Ski Resort in WV. Ask Madison about The Locker Room.</p>
@@ -90,6 +105,15 @@
             </div>
         </div>
     </div>
+
+    <div id="modal" class="modal">
+        <img id="modalImage" src="" alt="Enlarged Image">
+        <p id="modalSubtitle" class="subtitle"></p>
+        <span id="closeBtn" class="close-btn">Close</span>
+      </div>
+      
+      <div id="overlay" class="overlay"></div>      
+
     <footer>
         <p><a href="#top" onclick="reset()">Back to Top</a></p>
         <p>&copy; <a href="https://parkerjthomas.com" target="_blank">Parker Thomas</a>, 2023</p>
