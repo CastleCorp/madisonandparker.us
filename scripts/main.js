@@ -14,6 +14,7 @@ const pictureFrames = document.querySelectorAll('.picture-frame');
 const instructions = document.getElementById('instructions');
 const instructionsCheckbox = document.getElementById('instructionsCheckbox');
 const closeInstructions = document.getElementById('closeInstructions');
+const showAllButton = document.getElementById('showAll');
 
 // Set the first timeline container to be active at page load
 firstDiv.classList.add('active');
@@ -133,7 +134,7 @@ if (cookie == 'show') {
     overlay.style.display = 'block';
 } else {
     instructions.style.display = 'none';
-    overlay.styl.display = 'none';
+    overlay.style.display = 'none';
 }
 
 instructionsCheckbox.addEventListener('change', (event) => {
