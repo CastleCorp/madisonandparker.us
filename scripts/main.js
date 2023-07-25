@@ -1,24 +1,34 @@
+// Constants
 const prevBtn = document.getElementById('prevBtn');
 const nextBtn = document.getElementById('nextBtn');
-
 const firstDiv = document.getElementById('1');
-firstDiv.classList.add('active');
-
 const firstIcon = firstDiv.querySelector('i');
+const divContainers = document.querySelectorAll('.timeline .container');
+const contentDivs = document.querySelectorAll('.content');
+const modal = document.getElementById('modal');
+const modalImage = document.getElementById('modalImage');
+const modalSubtitle = document.getElementById('modalSubtitle');
+const closeBtn = document.getElementById('closeBtn');
+const overlay = document.getElementById('overlay');
+const pictureFrames = document.querySelectorAll('.picture-frame');
+
+// Set the first timeline container to be active at page load
+firstDiv.classList.add('active');
 firstIcon.classList.add('fa-beat');
 
 
-// Get all the div containers inside the timeline
-const divContainers = document.querySelectorAll('.timeline .container');
-
-// Variable to keep track of the currently active div
-let activeIndex = 0;
-
+/**
+* Reset active to the first div
+*/
 function reset() {
     activeIndex = 0;
     updateActiveDiv();
 }
 
+/**
+* Begin active div, nav functionality
+*/
+let activeIndex = 0;
 // Function to update the active div and scroll to it
 function updateActiveDiv() {
     divContainers.forEach((div, index) => {
@@ -52,27 +62,37 @@ prevBtn.addEventListener('click', () => {
         updateActiveDiv();
     }
 });
+/**
+ * End active div, nav functionality
+ */
 
-const contentDivs = document.querySelectorAll('.content');
-const modal = document.getElementById('modal');
-const modalImage = document.getElementById('modalImage');
-const modalSubtitle = document.getElementById('modalSubtitle');
-const closeBtn = document.getElementById('closeBtn');
-const overlay = document.getElementById('overlay');
-
-const pictureFrames = document.querySelectorAll('.picture-frame');
+/**
+ * Begin picture frame, overlay functionality
+ */
+// Add click listeners to each picture frame
 pictureFrames.forEach((content, index) => {
-    const image = content.querySelector('img');
-
+    let image = content.querySelector('img');
+    
+    // Set picture frame to image src, alt text as subtitle
     pictureFrames[index].addEventListener('click', () => {
-    modalImage.src = image.src;
-    modalSubtitle.innerText = image.alt; // Set the alt text as the subtitle
-    modal.style.display = 'block';
-    overlay.style.display = 'block';
-    nextBtn.disabled = true;
-    prevBtn.disabled = true;
+        modalImage.src = image.src;
+        modalSubtitle.innerText = image.alt;
+
+        // Display modal with image, disable nav
+        modal.style.display = 'block';
+        overlay.style.display = 'block';
+        nextBtn.disabled = true;
+        prevBtn.disabled = true;
     });
 });
+
+// When the close button or overlay are clicked, close the modal
+function closeModal() {
+    overlay.style.display = 'none';
+    modal.style.display = 'none';
+    nextBtn.disabled = false;
+    prevBtn.disabled = false;
+}
 
 closeBtn.addEventListener('click', () => {
     closeModal();
@@ -81,10 +101,6 @@ closeBtn.addEventListener('click', () => {
 overlay.addEventListener('click', () => {
     closeModal();
 });
-
-function closeModal() {
-    overlay.style.display = 'none';
-    modal.style.display = 'none';
-    nextBtn.disabled = false;
-    prevBtn.disabled = false;
-}
+/**
+ * End picture frame, overlay functionality
+ */
