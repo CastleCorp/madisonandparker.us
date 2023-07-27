@@ -4,8 +4,8 @@
 
 html {
 	scroll-behavior: smooth;
-	background: rgb(79,171,253);
-	background: linear-gradient(180deg, rgb(44, 80, 111) 15%, rgb(36, 65, 90) 30%, rgba(51,51,51,1) 100%);
+	background: rgb(255, 255, 255);
+	background: linear-gradient(180deg, rgb(192, 211, 228) 5%, rgb(72, 111, 146) 30%, rgba(51,51,51,1) 100%);
 }
 
 body {
@@ -106,7 +106,7 @@ body {
 }
 
 .subtitle {
-	color: lightgray;
+	color: rgb(227, 222, 222);
 	padding-top: 1.25em;
 }
 
