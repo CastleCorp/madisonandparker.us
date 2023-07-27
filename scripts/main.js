@@ -104,51 +104,42 @@ closeBtn.addEventListener('click', () => {
 
 overlay.addEventListener('click', () => {
     closeModal();
+    instructions.style.display = "none";
 });
 /**
 * End picture frame, overlay functionality
 */
-
-/**
-* Begin instructions modal functionality
-*/
-const getCookie = name => {
-    const nameExpression = `${name}=`;
-    const cookies = document.cookie.split(';');
-    const cookie = cookies.find(currentCookie => currentCookie.includes(nameExpression));
-    return cookie ? cookie.trim().substring(nameExpression.length, cookie.length) : null;
-}
-
-const setCookie = (name, value, expire = 365, path = '/') => {
-    const date = new Date();
-    date.setTime(date.getTime() + (expire * 24 * 3600 * 1000));
-    const expires = date.toUTCString();
-    document.cookie = `${name}=${value}; expires=${expires}; path=${path}`;
-}
-
-cookieName = 'showInstructions';
-const cookie = getCookie(cookieName);
-
-if (cookie == 'show') {
-    instructions.style.display = 'block';
-    overlay.style.display = 'block';
-} else {
-    instructions.style.display = 'none';
-    overlay.style.display = 'none';
-}
-
-instructionsCheckbox.addEventListener('change', (event) => {
-    if (instructionsCheckbox.checked == true) {
-        setCookie(cookieName, 'show', 7);
-    } else {
-        setCookie(cookieName, 'dontShow', 7);
+/** 
+ * Begin instructions modal functionality 
+ */
+function showInstructions() {
+    let storedPreference = localStorage.getItem("showInstructions");
+    if(storedPreference === null) {
+        localStorage.setItem("showInstructions", "true");
+        location.reload();
     }
-});
 
-closeInstructions.addEventListener("click", (event) => {
+    if(storedPreference === "true") {
+        overlay.style.display = "block";
+        instructions.style.display = "block";
+    } else {
+        overlay.style.display = "none";
+        instructions.style.display = "none";
+    }
+}
+
+closeInstructions.addEventListener("click", () => {
+    if(instructionsCheckbox.checked) {
+        localStorage.setItem("showInstructions", "true");
+    } else {
+        localStorage.setItem("showInstructions", "false");
+    }
+
     instructions.style.display = 'none';
     overlay.style.display = 'none';
-});
-/**
-* End instructions modal functionality
-*/
+})
+
+showInstructions();
+/** 
+ * End instructions modal functionality 
+ */
