@@ -104,7 +104,6 @@ closeBtn.addEventListener('click', () => {
 
 overlay.addEventListener('click', () => {
     closeModal();
-    instructions.style.display = "none";
 });
 /**
 * End picture frame, overlay functionality
