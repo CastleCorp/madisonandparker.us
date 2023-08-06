@@ -121,9 +121,13 @@ function showInstructions() {
     if(storedPreference === "true") {
         overlay.style.display = "block";
         instructions.style.display = "block";
+        prevBtn.disabled = true;
+        nextBtn.disabled = true;
     } else {
         overlay.style.display = "none";
         instructions.style.display = "none";
+        prevBtn.disabled = false;
+        nextBtn.disabled = false;
     }
 }
 
@@ -136,9 +140,16 @@ closeInstructions.addEventListener("click", () => {
 
     instructions.style.display = 'none';
     overlay.style.display = 'none';
+    prevBtn.disabled = false;
+    nextBtn.disabled = false;
 })
 
 showInstructions();
+
+function resetInstructions() {
+    localStorage.setItem("showInstructions", "true");
+    showInstructions();
+}
 /** 
  * End instructions modal functionality 
  */
